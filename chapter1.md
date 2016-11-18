@@ -7,7 +7,7 @@ attachments :
 --- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:24ffd00ef7
 ## A really bad movie
 
-Have a look at the plot that showed up in the viewer to the right. Which type of movie has the worst rating assigned to it?
+Проверка русского языка
 
 *** =instructions
 - Adventure
