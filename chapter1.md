@@ -1,6 +1,6 @@
 ---
-title       : Insert the chapter title here
-description : Insert the chapter description here
+title       : Test 1
+description : Тестирование по эконометрии
 attachments :
   slides_link : https://s3.amazonaws.com/assets.datacamp.com/course/teach/slides_example.pdf
 
@@ -40,11 +40,9 @@ test_mc(correct = 2, feedback_msgs = c(msg_bad, msg_success, msg_bad, msg_bad))
 ```
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:192e338017
-## More movies
+## Вычисление обычой доходности
 
-In the previous exercise, you saw a dataset about movies. In this exercise, we'll have a look at yet another dataset about movies!
 
-A dataset with a selection of movies, `movie_selection`, is available in the workspace.
 
 *** =instructions
 - Check out the structure of `movie_selection`.
