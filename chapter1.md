@@ -32,7 +32,7 @@ n=
 test_object("n", eval = FALSE)
 ```
 
---- type:NormalExercise lang:r xp:100 skills:1 key:192e338017
+--- type:NormalExercise lang:r xp:100 skills:1 key:98360b49d2
 ## Вычисление обычой доходности
 
 
