@@ -45,7 +45,7 @@ test_object("n", eval = FALSE)
 
 *** =pre_exercise_code
 ```{r}
-data(SPY)
+load(SPY.RData)
 spy=SPY[[1]][((n-1)*390+1):(n*390),2]
 ```
 
