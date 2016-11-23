@@ -24,7 +24,7 @@ attachments :
 
 *** =solution
 ```{r}
-n=
+n=1
 ```
 
 *** =sct
