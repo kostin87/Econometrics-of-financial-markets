@@ -37,7 +37,7 @@ test_object("n", eval = FALSE)
 
 
 
-*** =instructions
+*** =instructions 
 - У вас есть цены актива spy.
 - Вычислите обычную доходность для этого актива и запишите ее в переменную R.
 
@@ -45,7 +45,7 @@ test_object("n", eval = FALSE)
 
 *** =pre_exercise_code
 ```{r}
-load(url('https://github.com/kostin87/Econometrics-of-financial-markets/raw/master/SPY.RData'))
+load(url("https://github.com/kostin87/Econometrics-of-financial-markets/raw/master/SPY.RData"))
 spy=SPY[[1]][((n-1)*390+1):(n*390),2]
 ```
 
