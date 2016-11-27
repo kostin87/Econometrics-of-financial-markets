@@ -45,7 +45,7 @@ test_object("n", eval = FALSE)
 
 *** =pre_exercise_code
 ```{r}
-load(SPY.RData)
+load(url(https://github.com/kostin87/Econometrics-of-financial-markets/blob/master/SPY.RData))
 spy=SPY[[1]][((n-1)*390+1):(n*390),2]
 ```
 
