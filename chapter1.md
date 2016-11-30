@@ -39,7 +39,7 @@ test_object("R")
 ```
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:61f0a215c8
-## Вычисление обычой доходности
+## Вычисление логарифмической доходности
 
 
 
@@ -73,7 +73,7 @@ test_object("r")
 ```
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:15e90a572d
-## Вычисление обычой доходности
+## Отрисовка гистограмм
 
 
 
@@ -104,6 +104,5 @@ hist(r,breaks = 50)
 
 *** =sct
 ```{r}
-    test_output_contains("hist(r,breaks = 50)",
-                         incorrect_msg = "Внимательно читайте условие")
+test_function_result("hist")
 ```
