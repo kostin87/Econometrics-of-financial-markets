@@ -4,7 +4,7 @@ description : Тестирование по эконометрии
 attachments :
 
 
---- type:NormalExercise lang:r xp:100 skills:1 key:98360b49d2
+--- type:NormalExercise lang:r xp:100 skills:5 key:98360b49d2
 ## Вычисление обычой доходности
 
 
@@ -38,7 +38,7 @@ R<-diff(spy)/spy[-NROW(spy)]
 test_object("R")
 ```
 
---- type:NormalExercise lang:r xp:100 skills:1 key:61f0a215c8
+--- type:NormalExercise lang:r xp:100 skills:5 key:61f0a215c8
 ## Вычисление логарифмической доходности
 
 
@@ -72,7 +72,7 @@ r<-diff(log(spy))
 test_object("r")
 ```
 
---- type:NormalExercise lang:r xp:100 skills:1 key:15e90a572d
+--- type:NormalExercise lang:r xp:100 skills:5 key:15e90a572d
 ## Отрисовка гистограмм
 
 
@@ -105,4 +105,39 @@ hist(r,breaks = 50)
 *** =sct
 ```{r}
 test_function_result("hist")
+```
+
+--- type:NormalExercise lang:r xp:100 skills:5 key:650c69a43c
+## Отрисовка обычного графика
+
+
+
+*** =instructions 
+- У вас есть логарифмическая доходность r.
+- нарисуйте её график, используя линию.
+
+*** =hint
+
+*** =pre_exercise_code
+```{r}
+n=round(runif(1, min = 1, max = 30))
+load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_2233/datasets/SPY.RData"))
+spy=SPY[[1]][((n-1)*390+1):(n*390),2]
+r<-diff(log(spy))
+```
+
+*** =sample_code
+```{r}
+
+
+```
+
+*** =solution
+```{r}
+plot(r,type = "l")
+```
+
+*** =sct
+```{r}
+test_function_result("plot")
 ```
