@@ -71,3 +71,39 @@ r<-diff(log(spy))
 ```{r}
 test_object("r")
 ```
+
+--- type:NormalExercise lang:r xp:100 skills:1 key:15e90a572d
+## Вычисление обычой доходности
+
+
+
+*** =instructions 
+- У вас есть логарифмическая доходность r.
+- Постройте её гистограмму с разбиением на 50 столбцов.
+
+*** =hint
+
+*** =pre_exercise_code
+```{r}
+n=round(runif(1, min = 1, max = 30))
+load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_2233/datasets/SPY.RData"))
+spy=SPY[[1]][((n-1)*390+1):(n*390),2]
+r<-diff(log(spy))
+```
+
+*** =sample_code
+```{r}
+
+
+```
+
+*** =solution
+```{r}
+hist(r,breaks = 50)
+```
+
+*** =sct
+```{r}
+    test_output_contains("hist(r,breaks = 50)",
+                         incorrect_msg = "Внимательно читайте условие")
+```
