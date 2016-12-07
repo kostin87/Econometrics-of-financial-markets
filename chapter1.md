@@ -141,3 +141,282 @@ plot(r,type = "l")
 ```{r}
 test_function_result("plot")
 ```
+
+--- type:NormalExercise lang:r xp:100 skills:5 key:44d031f162
+## Разбиение векторов
+
+
+
+*** =instructions 
+- Разбейте вектор spy на три равных по длинне вектора spy1, spy2, spy3.
+
+*** =hint
+
+*** =pre_exercise_code
+```{r}
+n=round(runif(1, min = 1, max = 30))
+load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_2233/datasets/SPY.RData"))
+spy=SPY[[1]][((n-1)*390+1):(n*390),2]
+```
+
+*** =sample_code
+```{r}
+spy1=
+spy2=
+spy3=
+
+```
+
+*** =solution
+```{r}
+spy1=spy[1:(length(spy)/3)]
+spy2=spy[(length(spy)/3 +1):(length(spy)*2/3)]
+spy3=spy[(length(spy)*2/3 +1):(length(spy))]
+```
+
+*** =sct
+```{r}
+test_object("spy1")
+test_object("spy2")
+test_object("spy3")
+```
+
+
+--- type:NormalExercise lang:r xp:100 skills:5 key:ddb7608ad9
+## Среднее, дисперсия и среднеквадратическое отклонение
+
+
+
+*** =instructions 
+- Для вектора доходностей r рассчитайте среднее, дисперсию и среднеквадратическое отклонение и запишите в переменные m,v,s соответственно.
+
+*** =hint
+
+*** =pre_exercise_code
+```{r}
+n=round(runif(1, min = 1, max = 30))
+load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_2233/datasets/SPY.RData"))
+spy=SPY[[1]][((n-1)*390+1):(n*390),2]
+r<-diff(log(spy))
+```
+
+*** =sample_code
+```{r}
+m=
+v=
+s=
+```
+
+*** =solution
+```{r}
+m=mean(r)
+v=var(r)
+s=sd(r)
+```
+
+*** =sct
+```{r}
+test_object("m")
+test_object("v")
+test_object("s")
+```
+
+--- type:NormalExercise lang:r xp:100 skills:5 key:606c591624
+## Ограничение векторов
+
+
+
+*** =instructions 
+- У вас есть вектор доходностей r. Создайте вектор rNew, который состоял бы только из неотрицательных значений вектора r.
+
+*** =hint
+
+*** =pre_exercise_code
+```{r}
+n=round(runif(1, min = 1, max = 30))
+load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_2233/datasets/SPY.RData"))
+spy=SPY[[1]][((n-1)*390+1):(n*390),2]
+r<-diff(log(spy))
+```
+
+*** =sample_code
+```{r}
+rNew=
+
+```
+
+*** =solution
+```{r}
+rNew=r[r>=0]
+```
+
+*** =sct
+```{r}
+test_object("rNew")
+```
+
+--- type:NormalExercise lang:r xp:100 skills:5 key:cfdb284084
+## Объединение векторов
+
+
+
+*** =instructions 
+- У вас есть два вектора c1 и c2, объедините их в матрицу с двумя столбцами c3.
+*** =hint
+
+*** =pre_exercise_code
+```{r}
+с1=rnorm(1000)
+с2=rnorm(1000)
+```
+
+*** =sample_code
+```{r}
+c3=
+
+```
+
+*** =solution
+```{r}
+c3=cbind(c1,c2)
+```
+
+*** =sct
+```{r}
+test_object("c3")
+```
+
+--- type:NormalExercise lang:r xp:100 skills:5 key:6ca86c7e87
+## Линейная регрессия
+
+
+
+*** =instructions 
+- Постройте линейну регрессию spy от линейного тренда и запишите ее в переменную fit.
+*** =hint
+
+*** =pre_exercise_code
+```{r}
+n=round(runif(1, min = 1, max = 30))
+load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_2233/datasets/SPY.RData"))
+spy=SPY[[1]][((n-1)*390+1):(n*390),2]
+```
+
+*** =sample_code
+```{r}
+fit=
+
+```
+
+*** =solution
+```{r}
+t=1:length(spy)
+fit=lm(spy~t)
+```
+
+*** =sct
+```{r}
+test_object("fit")
+```
+
+
+--- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:dd5093e3d3
+## Результаты регрессии
+
+У вас есть результаты линейной регрессии fit. Является ли регрессия значимой?
+
+*** =instructions
+- Да
+- Нет
+
+*** =pre_exercise_code
+```{r}
+x=c(3,6,5,7,8,5,4,8,9,6,4,3,6,7,9,7,6,10,11,10)
+t=1:length(x)
+t2=t^2
+fit=lm(x~t+t2)
+```
+
+*** =sct
+```{r}
+test_mc(correct = 1)
+```
+
+
+
+--- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:ba1aef6938
+## Результаты регрессии
+
+У вас есть результаты линейной регрессии fit. Является ли переменная t значимой?
+
+*** =instructions
+- Да
+- Нет
+
+*** =pre_exercise_code
+```{r}
+x=c(3,6,5,7,8,5,4,8,9,6,4,3,6,7,9,7,6,10,11,10)
+t=1:length(x)
+t2=t^2
+fit=lm(x~t+t2)
+```
+
+*** =sct
+```{r}
+test_mc(correct = 2)
+```
+
+
+--- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:d2043621d1
+## Результаты регрессии
+
+У вас есть результаты линейной регрессии fit. Является ли переменная t2 значимой?
+
+*** =instructions
+- Да
+- Нет
+
+*** =pre_exercise_code
+```{r}
+x=c(3,6,5,7,8,5,4,8,9,6,4,3,6,7,9,7,6,10,11,10)
+t=1:length(x)
+t2=t^2
+fit=lm(x~t+t2)
+```
+
+*** =sct
+```{r}
+test_mc(correct = 2)
+```
+
+--- type:NormalExercise lang:r xp:100 skills:5 key:f0cfad2390
+## ARIMA
+
+
+
+*** =instructions 
+- У вас есть вектор spy, постройте по нему оптимальную Arima регрессию по  aicc и запишите её в переменную fit.
+
+*** =hint
+
+*** =pre_exercise_code
+```{r}
+n=round(runif(1, min = 1, max = 30))
+load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_2233/datasets/SPY.RData"))
+spy=SPY[[1]][((n-1)*390+1):(n*390),2]
+```
+
+*** =sample_code
+```{r}
+fit=
+```
+
+*** =solution
+```{r}
+fit=auto.arima(spy)
+```
+
+*** =sct
+```{r}
+test_object("fit")
+```
