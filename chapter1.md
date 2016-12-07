@@ -421,3 +421,108 @@ fit=auto.arima(spy)
 ```{r}
 test_object("fit")
 ```
+
+--- type:NormalExercise lang:r xp:100 skills:5 key:54aa250dfd
+## ARIMA
+
+
+
+*** =instructions 
+- У вас есть вектор spy, постройте по нему Arima(1,1,1) регрессию и запишите её в переменную fit.
+
+*** =hint
+Функция arima.
+*** =pre_exercise_code
+```{r}
+library('forecast')
+n=round(runif(1, min = 1, max = 30))
+load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_2233/datasets/SPY.RData"))
+spy=SPY[[1]][((n-1)*390+1):(n*390),2]
+```
+
+*** =sample_code
+```{r}
+fit=
+```
+
+*** =solution
+```{r}
+fit=arima(spy,c(1,1,1))
+```
+
+*** =sct
+```{r}
+test_object("fit")
+```
+
+--- type:NormalExercise lang:r xp:100 skills:5 key:558478a59e
+## VaR
+
+
+
+*** =instructions 
+- У вас есть timeSeries вектор доходностей r. Рассчитайте модифицированный VaR по этому вектору и запишите в переменную VaR.
+
+*** =hint
+
+*** =pre_exercise_code
+```{r}
+library('timeSeries')
+library("PerformanceAnalytics")
+n=round(runif(1, min = 1, max = 30))
+load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_2233/datasets/SPY.RData"))
+spy=SPY[[1]][((n-1)*390+1):(n*390),2]
+r<-diff(log(spy))
+r=timeSeries(r,charvec=(1:NROW(r))*24*60*60)
+```
+
+*** =sample_code
+```{r}
+VaR=
+```
+
+*** =solution
+```{r}
+VaR=VaR(r)
+```
+
+*** =sct
+```{r}
+test_object("VaR")
+```
+
+--- type:NormalExercise lang:r xp:100 skills:5 key:ec45fd6026
+## VaR
+
+
+
+*** =instructions 
+- У вас есть timeSeries вектор доходностей r. Рассчитайте исторический VaR по этому вектору и запишите в переменную VaR.
+
+*** =hint
+
+*** =pre_exercise_code
+```{r}
+library('timeSeries')
+library("PerformanceAnalytics")
+n=round(runif(1, min = 1, max = 30))
+load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_2233/datasets/SPY.RData"))
+spy=SPY[[1]][((n-1)*390+1):(n*390),2]
+r<-diff(log(spy))
+r=timeSeries(r,charvec=(1:NROW(r))*24*60*60)
+```
+
+*** =sample_code
+```{r}
+VaR=
+```
+
+*** =solution
+```{r}
+VaR=VaR(r,method="historical")
+```
+
+*** =sct
+```{r}
+test_object("VaR")
+```
