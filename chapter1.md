@@ -401,6 +401,7 @@ test_mc(correct = 2)
 
 *** =pre_exercise_code
 ```{r}
+library('forecast')
 n=round(runif(1, min = 1, max = 30))
 load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_2233/datasets/SPY.RData"))
 spy=SPY[[1]][((n-1)*390+1):(n*390),2]
