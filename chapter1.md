@@ -321,7 +321,7 @@ test_object("fit")
 
 
 --- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:dd5093e3d3
-## Результаты регрессии
+## Результаты регрессии1
 
 У вас есть результаты линейной регрессии fit. Является ли регрессия значимой?
 
@@ -345,7 +345,7 @@ test_mc(correct = 1)
 
 
 --- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:ba1aef6938
-## Результаты регрессии
+## Результаты регрессии2
 
 У вас есть результаты линейной регрессии fit. Является ли переменная t значимой?
 
@@ -368,7 +368,7 @@ test_mc(correct = 2)
 
 
 --- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:d2043621d1
-## Результаты регрессии
+## Результаты регрессии3
 
 У вас есть результаты линейной регрессии fit. Является ли переменная t2 значимой?
 
@@ -390,7 +390,7 @@ test_mc(correct = 2)
 ```
 
 --- type:NormalExercise lang:r xp:100 skills:5 key:f0cfad2390
-## ARIMA
+## ARIMA1
 
 
 
@@ -423,7 +423,7 @@ test_object("fit")
 ```
 
 --- type:NormalExercise lang:r xp:100 skills:5 key:54aa250dfd
-## ARIMA
+## ARIMA2
 
 
 
@@ -456,7 +456,7 @@ test_object("fit")
 ```
 
 --- type:NormalExercise lang:r xp:100 skills:5 key:558478a59e
-## VaR
+## VaR1
 
 
 
@@ -492,7 +492,7 @@ test_object("VaR")
 ```
 
 --- type:NormalExercise lang:r xp:100 skills:5 key:ec45fd6026
-## VaR
+## VaR2
 
 
 
