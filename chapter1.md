@@ -264,10 +264,15 @@ test_object("rNew")
 - У вас есть два вектора c1 и c2, объедините их в матрицу с двумя столбцами c3.
 *** =hint
 
-*** =sample_code
+*** =pre_exercise_code
 ```{r}
 c1=rnorm(1000)
 c2=rnorm(1000)
+
+```
+
+*** =sample_code
+```{r}
 c3=
 
 ```
@@ -385,39 +390,6 @@ fit=lm(x~t+t2)
 test_mc(correct = 2)
 ```
 
---- type:NormalExercise lang:r xp:100 skills:5 key:f0cfad2390
-## ARIMA1
-
-
-
-*** =instructions 
-- У вас есть вектор spy, постройте по нему оптимальную Arima регрессию по  aicc и запишите её в переменную fit.
-
-*** =hint
-
-*** =pre_exercise_code
-```{r}
-library('forecast')
-n=round(runif(1, min = 1, max = 30))
-load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_2233/datasets/SPY.RData"))
-spy=SPY[[1]][((n-1)*390+1):(n*390),2]
-```
-
-*** =sample_code
-```{r}
-fit=
-```
-
-*** =solution
-```{r}
-fit=auto.arima(spy)
-```
-
-*** =sct
-```{r}
-test_object("fit")
-```
-
 --- type:NormalExercise lang:r xp:100 skills:5 key:54aa250dfd
 ## ARIMA2
 
@@ -430,7 +402,7 @@ test_object("fit")
 Функция arima.
 *** =pre_exercise_code
 ```{r}
-library('forecast')
+require('forecast')
 n=round(runif(1, min = 1, max = 30))
 load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_2233/datasets/SPY.RData"))
 spy=SPY[[1]][((n-1)*390+1):(n*390),2]
@@ -461,6 +433,8 @@ test_object("fit")
 
 *** =hint
 
+
+
 *** =pre_exercise_code
 ```{r}
 library('timeSeries')
@@ -486,7 +460,6 @@ VaR=VaR(r)
 ```{r}
 test_object("VaR")
 ```
-
 --- type:NormalExercise lang:r xp:100 skills:5 key:ec45fd6026
 ## VaR2
 
