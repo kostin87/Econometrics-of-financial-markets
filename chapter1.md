@@ -264,14 +264,10 @@ test_object("rNew")
 - У вас есть два вектора c1 и c2, объедините их в матрицу с двумя столбцами c3.
 *** =hint
 
-*** =pre_exercise_code
-```{r}
-с1=rnorm(1000)
-с2=rnorm(1000)
-```
-
 *** =sample_code
 ```{r}
+c1=rnorm(1000)
+c2=rnorm(1000)
 c3=
 
 ```
